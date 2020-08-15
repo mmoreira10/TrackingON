@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { CSS } from './assets/css/CSS';
 import Page from './views/Page';
 
 export default function App() {
@@ -10,8 +11,8 @@ export default function App() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text>Bem-vindo!</Text>
+    <View style={CSS.container}>
+      <Text style={CSS.textPage}>Bem-vindo!</Text>
       <Page {...props} />
       {/* <Page empresa='Programação'/>
       <Page empresa='Development'/> */}
@@ -19,12 +20,3 @@ export default function App() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
