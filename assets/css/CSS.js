@@ -8,9 +8,31 @@ const CSS = StyleSheet.create({
         justifyContent: 'center',
     },
 
+    container2: {
+        flex: 1,
+        flexDirection: "row",
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+
     textPage: {
         backgroundColor: 'orange',
         padding: 20
+    },
+
+    button__home: {
+        
+    },
+
+    image__login: {
+        width: 180,
+        height: 180
+    },
+
+    image__rastreio: {
+        width: 200,
+        height: 200
     }
 });
 

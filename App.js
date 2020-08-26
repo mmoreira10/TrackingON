@@ -1,22 +1,30 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, Button, Alert } from 'react-native';
 import { CSS } from './assets/css/CSS';
-import Page from './views/Page';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Home, Login, Rastreio } from './views/Index';
 
 export default function App() {
-  const props = {
-    empresa: 'TrackingON',
-    name: 'Matheus'
-  };
+
+  const Stack = createStackNavigator();
 
   return (
-    <View style={CSS.container}>
-      <Text style={CSS.textPage}>Bem-vindo!</Text>
-      <Page {...props} />
-      {/* <Page empresa='Programação'/>
-      <Page empresa='Development'/> */}
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{
+            title: "Bem-vindo",
+            headerStyle: {backgroundColor: "#f9b233"},
+            headerTintColor: "#333",
+            headerTitleStyle: { fontWeight: "bold", alignSelf: "center" }
+          }}
+        />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Rastreio" component={Rastreio} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
